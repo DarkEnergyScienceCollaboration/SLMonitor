@@ -91,3 +91,15 @@ We want to use `jupyter-dev` for our project in order to have a convenient porta
   pip install <package_name> --user
   ```
   and pip will install a personal copy of the package. Then restart the kernel in your notebook and you should be able to import the package. Futhermore, the package will henceforth be available in any other notebooks you run with the `lsst` kernel.
+  
+## Troubleshooting Common Errors
+
+  - You see "503 : Service Unavailable" when attempting to start a Jupyter-Dev server for the first time
+    - This may be because you do not have `bash` as your default shell on Cori. Unfortunately it is currently necessary to use `bash` as your default shell to get Jupyter-Dev to work. NERSC developers are aware of the issue and it is on their to-do list.
+    
+  - You are trying to get the lsst kernel to work with a different version of the LSST stack but it crashes before starting
+    - This may be because the version of the stack you are using does not include `ipykernel`. To fix this install a user version of the package with: `pip install ipykernel --user`.
+    
+## Further help
+
+  If you are experiencing issues not documented here contact the NERSC help desk at: consult@nersc.gov.
